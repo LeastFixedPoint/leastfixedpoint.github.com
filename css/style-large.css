@@ -1,0 +1,18 @@
+body {
+	padding: 0.5em;
+}
+
+nav {
+	display: none;
+}
+
+.column {
+	width: 30em;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 0.5em;
+}
+
+.item {
+	border: 1px solid #ddd;
+}

@@ -3,38 +3,61 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
 	<title>fixpoint.me</title>
-	<meta name="viewport" content="width=device-width">
+	
+	<meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
+	
+	<link rel="stylesheet" href="css/boilerplate.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style-large.css" media="(min-width: 65em)">
+	<link rel="stylesheet" href="css/style-small.css" media="(max-width: 65em)">
+	
+	<link rel="openid.server" href="http://www.myopenid.com/server">
+	<link rel="openid.delegate" href="http://shooshpanchick.myopenid.com">
+	
 	<script src="js/libs/modernizr-2.5.2.min.js"></script>
-
-	<!-- Google+ -->
-	<link href="https://plus.google.com/108336775760271407739" rel="publisher" /><script type="text/javascript">
-	window.___gcfg = {lang: 'en'};
-	(function() 
-	{var po = document.createElement("script");
-	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
-	var s = document.getElementsByTagName("script")[0];
-	s.parentNode.insertBefore(po, s);
-	})();</script>
-
-	<!-- Coderwall -->
-	<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
-	<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
-
+	<script src="js/loading.js"></script>
 </head>
 <body>
-<header>
-</header>
-<div role="main">
-<div class="g-plus" data-href="https://plus.google.com/108336775760271407739" data-width="300" data-height="131" data-theme="light"></div>
-<section class="coderwall" data-coderwall-username="fixpoint" data-coderwall-orientation="horizontal"></section>
-</div>
-<footer>
-</footer>
+	<h1>Tymur Porkuian</h1>
+	
+	<div class="column">
+		<section id="contacts">
+			<a name="contacts"><h2>Contacts</h2></a>
+			<div class="item">
+			<ul>
+				<li>Skype: <a href="skype:tymurporkuian">tymurporkuian</a>
+				<li>E-mail: <a href="mailto:least.fixed.point@gmail.com">least.fixed.point@gmail.com</a>
+			</ul>
+			</div>
+		</section>
+		
+		<section id="projects">
+			<a name="projects"><h2>Projects</h2></a>
+			<div class="item loading">Loading...</div>
+		</section>
+	</div>
+	
+	<section class="column" id="stream">
+		<a name="stream"><h2><a href="http://gplus.to/fixpoint">G+ Stream</a></h2></a>
+		<div class="item loading">Loading...</div>
+	</section>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/libs/jquery.timeago.js"></script>
+	<script src="js/libs/jquery.masonry.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			loadProjects()
+			loadStream()
+		})
+	</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
+	<nav>
+		<a href="#contacts">Contacts</a>
+		<a href="#projects">Projects</a>
+		<a href="#stream">Stream</a>
+	</nav>
 </body>
 </html>

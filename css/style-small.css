@@ -1,0 +1,31 @@
+nav {
+	position: fixed;
+	bottom: 0em;
+	z-index: 1;
+	background: #ddd;
+	width: 100%;
+	border-bottom: 1px solid #bbb;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+nav a {
+	display: inline-block;
+	text-align: center;
+	width: 32%;
+}
+
+h1, h2 {
+	margin-left: 0.25em;
+}
+
+.column {
+}
+
+section {
+}
+
+.item {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
