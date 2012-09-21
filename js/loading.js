@@ -9,6 +9,14 @@ function loadProjects() {
 		}
 	}
 	
+	function repoTypeToString(type) {
+		switch (type) {
+			case 'bitbucket': return " @ BitBucket"
+			case 'github': return " @ GitHub"
+			default: return ""
+		}
+	}
+	
 	function onAllLoaded() {
 		var projectsElem = $('#projects')
 		$('.loading', projectsElem).hide()
@@ -22,18 +30,19 @@ function loadProjects() {
 			projectsElem.append('<div class="item">'
 				+ '<a class="title" href="' + repo.url + '">' + repo.name + '</a>'
 				+ (repo.description ? ('<br><span class="description">' + repo.description + '</span>'): '')
-				+ '<br><span class="date">updated ' + $.timeago(date) + '</span>'
+				+ '<br><span class="date">updated ' + $.timeago(date)+ repoTypeToString(repo.type) + '</span>'
 				+ '</div>')
 		})
 	}
 
-	$.getJSON('https://github.com/api/v2/json/repos/show/leastfixedpoint?callback=?', function(data, textStatus, jqXHR) {
-		$.each(data.repositories, function(i, repo) {
+	$.getJSON('https://api.github.com/users/leastfixedpoint/repos?callback=?', function(data, textStatus, jqXHR) {
+		$.each(data.data, function(i, repo) {
 			if (!repo.description || repo.fork) {
 				return
 			}
 			
 			repositories.push({
+				type: 'github',
 				updated: repo.pushed_at,
 				description: repo.description,
 				name: repo.name,
@@ -52,6 +61,7 @@ function loadProjects() {
 			}
 			
 			repositories.push({
+				type: 'bitbucket',
 				updated: repo.utc_last_updated,
 				description: repo.description,
 				name: repo.name,
